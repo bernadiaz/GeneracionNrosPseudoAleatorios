@@ -1,28 +1,20 @@
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        List<Double> datos = null;
+        boolean aceptada = false;
 
+        while(!aceptada){
+            generacionAleatorios g = new generacionAleatorios();
+            datos = g.congruencialMixto();
+            pruebas p=new pruebas();
 
-        // 1. Generación de números aleatorios
-        generacionAleatorios g = new generacionAleatorios();
-        List<Double> resultados = g.congruencialMixto();
-        System.out.println("\nNúmeros generados: " + resultados);
+            aceptada = p.correrPruebas(datos);
+        }
 
-        // 2. Prueba del Promedio
-        //pruebasPromedio pp = new pruebasPromedio();
-        //pp.pruebaPromedio(resultados);
+        System.out.println("\nNúmeros generados: " + datos);
 
-        // 3. Prueba de Frecuencias (Chi-cuadrado uniforme 1D)
-        pruebasFrecuencia pf = new pruebasFrecuencia();
-        pf.logicaPruebaFrecuencia(resultados, scanner);
-
-        // 4. Prueba de la Serie (Chi-cuadrado en grilla k x k)
-        //pruebasSeries ps = new pruebasSeries();
-        //ps.logicaPruebaSeries(resultados);
-
-        scanner.close();
     }
 }

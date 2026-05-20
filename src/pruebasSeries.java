@@ -171,7 +171,7 @@ public class pruebasSeries {
      * El valor crítico χ²tabla se calcula automáticamente a partir del nivel
      * de significancia α y los grados de libertad gl = k² − 1.
      */
-    public void logicaPruebaSeries(List<Double> datos) {
+    public boolean logicaPruebaSeries(List<Double> datos) {
         System.out.println("\n========================================");
         System.out.println("   PRUEBA DE LA SERIE (Chi-cuadrado)   ");
         System.out.println("========================================");
@@ -197,16 +197,19 @@ public class pruebasSeries {
 
         // ---- 4. Decisión ────────────────────────────────────────────────────
         System.out.println("\n--- Decisión ---");
+        boolean aceptada = false;
         if (chiCalculado < chiTabla) {
             System.out.printf("  χ²calc (%.6f) < χ²tabla (%.6f)  →  "
                     + "NO se rechaza H₀%n", chiCalculado, chiTabla);
             System.out.println("  Conclusión: Los pares son independientes / "
                     + "uniformes en [0,1)².");
+            aceptada = true;
         } else {
             System.out.printf("  χ²calc (%.6f) ≥ χ²tabla (%.6f)  →  "
                     + "Se RECHAZA H₀%n", chiCalculado, chiTabla);
             System.out.println("  Conclusión: Los pares NO son independientes / "
                     + "uniformes en [0,1)².");
         }
+        return aceptada;
     }
 }
