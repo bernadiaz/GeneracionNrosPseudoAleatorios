@@ -21,7 +21,7 @@ public class pruebasPromedio {
         return suma/datos.size();
     }
 
-    public Boolean pruebaPromedio(List<Double> datos){
+    public boolean pruebaPromedio(List<Double> datos){
         double za = 1.96;
         double varianzaR = Math.sqrt(1.0 / 12.0);
 

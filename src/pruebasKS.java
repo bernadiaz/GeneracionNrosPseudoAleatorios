@@ -4,7 +4,6 @@ import java.util.List;
 
 public class pruebasKS {
 
-    // Cambiamos 'void' por 'boolean'
     public boolean logicaPruebaKS(List<Double> datos) {
         System.out.println("\n========================================");
         System.out.println("   PRUEBA DE KOLMOGOROV-SMIRNOV (K-S)   ");
@@ -44,11 +43,11 @@ public class pruebasKS {
         if (dMax < dCritico) {
             System.out.printf("  D_max (%.6f) < D_critico (%.6f) -> NO se rechaza H0%n", dMax, dCritico);
             System.out.println("  Resultado: Los números siguen una distribución Uniforme en (0,1).");
-            return true;  // <--- Retorna TRUE si pasa la prueba
+            return true;
         } else {
             System.out.printf("  D_max (%.6f) >= D_critico (%.6f) -> Se RECHAZA H0%n", dMax, dCritico);
             System.out.println("  Resultado: Los números NO siguen una distribución Uniforme en (0,1).");
-            return false; // <--- Retorna FALSE si falla la prueba
+            return false;
         }
     }
 }

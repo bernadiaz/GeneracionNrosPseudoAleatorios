@@ -74,17 +74,20 @@ public class pruebasFrecuencia {
         return sumaChi;
     }
 
-    public void logicaPruebaFrecuencia(List<Double> datos, Scanner scanner){
+    public boolean logicaPruebaFrecuencia(List<Double> datos){
         System.out.println("--- Prueba de Frecuencias (Chi-cuadrado) ---");
         Double chiCalculado = calculoEstadistico(datos);
 
         Double chiTabla = chiCuadradoCritico(x-1,0.05);
-
+        boolean aceptada = false;
         if (chiCalculado < chiTabla) {
             System.out.println("Resultado: No se rechaza H0 (Los números son uniformes).");
+            aceptada=true;
         } else {
             System.out.println("Resultado: Se rechaza H0 (Los números NO son uniformes).");
         }
+
+        return aceptada;
     }
 
     public static double chiCuadradoCritico(int gl, double alpha) {
