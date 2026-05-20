@@ -23,6 +23,10 @@ public class Main {
         //pruebasSeries ps = new pruebasSeries();
         //ps.logicaPruebaSeries(resultados);
 
+        // 6. Prueba de Corrida Arriba y Abajo de la media
+        pruebasCorrida pc = new pruebasCorrida();
+        pc.logicaPruebaCorrida(resultados);
+
         // 5. Prueba K-S
         pruebasKS pks = new pruebasKS();
         pks.logicaPruebaKS(resultados);
