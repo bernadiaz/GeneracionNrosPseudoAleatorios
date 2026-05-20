@@ -16,8 +16,8 @@ public class Main {
         //pp.pruebaPromedio(resultados);
 
         // 3. Prueba de Frecuencias (Chi-cuadrado uniforme 1D)
-//        pruebasFrecuencia pf = new pruebasFrecuencia();
-//        pf.logicaPruebaFrecuencia(resultados, scanner);
+        //pruebasFrecuencia pf = new pruebasFrecuencia();
+        //pf.logicaPruebaFrecuencia(resultados, scanner);
 
         // 4. Prueba de la Serie (Chi-cuadrado en grilla k x k)
         //pruebasSeries ps = new pruebasSeries();
@@ -27,6 +27,9 @@ public class Main {
         pruebasCorrida pc = new pruebasCorrida();
         pc.logicaPruebaCorrida(resultados);
 
+        // 5. Prueba K-S
+        pruebasKS pks = new pruebasKS();
+        pks.logicaPruebaKS(resultados);
         scanner.close();
     }
 }
